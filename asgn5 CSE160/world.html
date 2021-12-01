@@ -64,7 +64,7 @@ function main() {
     const planeSize = 1;
 
     const loader = new THREE.TextureLoader();
-    const texture = loader.load('resources/images/grass.png');
+    const texture = loader.load('./resources/images/grass.png');
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
     texture.magFilter = THREE.NearestFilter;
@@ -84,7 +84,7 @@ function main() {
   {
     const loader = new THREE.TextureLoader();
     const texture = loader.load(
-    'resources/images/sky.png',
+    './resources/images/sky.png',
     () => {
       const rt = new THREE.WebGLCubeRenderTarget(texture.image.height);
       rt.fromEquirectangularTexture(renderer, texture);
@@ -285,10 +285,10 @@ function main() {
    // ------------------- Objects Controls -----------------------
   {
     var textureLoader = new THREE.TextureLoader();
-    var map = textureLoader.load('/resources/images/black.jpg');
+    var map = textureLoader.load('./resources/images/black.jpg');
     var material = new THREE.MeshPhongMaterial({map: map});
     var loader = new OBJLoader();
-    loader.load( '/resources/car.obj', function ( object ) {
+    loader.load( './resources/car.obj', function ( object ) {
   // For any meshes in the model, add our material.
     object.traverse( function ( node ) {
       if ( node.isMesh ) node.material = material;
@@ -307,10 +307,10 @@ function main() {
 
   {
     var textureLoader2 = new THREE.TextureLoader();
-    var map2 = textureLoader2.load('/resources/images/cany.jpg');
+    var map2 = textureLoader2.load('./resources/images/cany.jpg');
     var material2 = new THREE.MeshPhongMaterial({map: map2});
     var loader2 = new OBJLoader();
-    loader2.load( '/resources/map.obj', function (canyon ) {
+    loader2.load( './resources/map.obj', function (canyon ) {
   // For any meshes in the model, add our material.
    canyon.traverse( function ( node ) {
       if ( node.isMesh ) node.material = material2;
@@ -327,10 +327,10 @@ function main() {
 
   {
     var textureLoader3 = new THREE.TextureLoader();
-    var map3 = textureLoader3.load('/resources/images/cany2.png');
+    var map3 = textureLoader3.load('./resources/images/cany2.png');
     var material3 = new THREE.MeshPhongMaterial({map: map3});
     var loader3 = new OBJLoader();
-    loader3.load( '/resources/Old stone bridge.obj', function (bridge ) {
+    loader3.load( './resources/Old stone bridge.obj', function (bridge ) {
   // For any meshes in the model, add our material.
   
    bridge.traverse( function ( node ) {
@@ -352,7 +352,7 @@ function main() {
   {
     const loader4 = new THREE.TextureLoader();
     const geometry = new THREE.BoxGeometry( 300, 100, 1 );
-    const material = new THREE.MeshBasicMaterial( {map: loader4.load('/resources/images/buckle.jpg')} );
+    const material = new THREE.MeshBasicMaterial( {map: loader4.load('./resources/images/buckle.jpg')} );
     const billBoard = new THREE.Mesh( geometry, material );
     billBoard.rotation.y = Math.PI/7
     billBoard.position.y = 150;
@@ -404,7 +404,7 @@ function main() {
     return ctx.canvas;
   }
 
-  const materialbody = new THREE.MeshBasicMaterial( {map: loaderbody.load('/resources/images/metal.png')} );
+  const materialbody = new THREE.MeshBasicMaterial( {map: loaderbody.load('./resources/images/metal.png')} );
     const body = new THREE.Mesh( geometry, materialbody );
     body.rotation.y = Math.PI/7;
     body.position.y = 150;
@@ -441,7 +441,7 @@ function main() {
     
     
     
-    const materialtail = new THREE.MeshBasicMaterial( {map: loaderbody2.load('/resources/images/metal.jpg')} );
+    const materialtail = new THREE.MeshBasicMaterial( {map: loaderbody2.load('./resources/images/metal.jpg')} );
     const tail = new THREE.Mesh( geometry2, materialtail );
  
     tail.rotation.y = Math.PI/7
@@ -451,7 +451,7 @@ function main() {
     tail.castShadow = true;
     scene.add( tail );
 
-    const materialtail2 = new THREE.MeshBasicMaterial( {map: loaderbody3.load('/resources/images/wing.jpg')} );
+    const materialtail2 = new THREE.MeshBasicMaterial( {map: loaderbody3.load('./resources/images/wing.jpg')} );
     const tail2 = new THREE.Mesh( geometry4, materialtail2 );
     
     tail2.rotation.y = Math.PI/7
